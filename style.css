@@ -1,32 +1,33 @@
 :root {
-  --bg: #F4F6FA;
+  --bg: #FFFBE8;
   --panel: #FFFFFF;
-  --ink: #1B2430;
-  --muted: #5A6472;
-  --line: #E2E6EC;
-  --accent: #3E5C9A;
-  --accent-soft: #E7ECF5;
-  --accent-ink: #FFFFFF;
-  --chip-bg: #EEF1F6;
-  --mono-bg: #16202E;
-  --mono-ink: #DCE6F2;
-  --mono-dim: #7C93B3;
-  --mono-accent: #8FB2E8;
-  --mono-string: #D8B36A;
-  --shadow: 0 10px 30px rgba(20, 30, 50, 0.08);
+  --ink: #181410;
+  --muted: #6E675A;
+  --line: #EDE7D0;
+  --accent: #F5B800;
+  --accent-soft: #FFF1C2;
+  --accent-ink: #181410;
+  --chip-bg: #F7F2DF;
+  --mono-bg: #181410;
+  --mono-ink: #E9E2D0;
+  --mono-dim: #8B8272;
+  --mono-accent: #FFC900;
+  --mono-string: #E8B23A;
+  --shadow: 0 10px 30px rgba(50, 42, 10, 0.10);
 }
 
 html[data-theme="dark"] {
-  --bg: #0E1420;
-  --panel: #151D2C;
-  --ink: #E8EDF6;
-  --muted: #93A1B4;
-  --line: #24304A;
-  --accent: #8FB2E8;
-  --accent-soft: #1E2B42;
-  --accent-ink: #0E1420;
-  --chip-bg: #1B2740;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --bg: #12100B;
+  --panel: #1D1A13;
+  --ink: #F4EEDD;
+  --muted: #A69D89;
+  --line: #2E2A1F;
+  --accent: #FFC900;
+  --accent-soft: #2A2514;
+  --accent-ink: #12100B;
+  --chip-bg: #272216;
+  --mono-bg: #0B0A07;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 * { box-sizing: border-box; }
@@ -146,7 +147,7 @@ section#skills, section#proyectos, section#experiencia { border-top: 1px solid v
   height: 88px;
   margin: 0 auto 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--mono-accent));
+  background: linear-gradient(135deg, #181410 0%, var(--accent) 100%);
   color: var(--accent-ink);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 30px;
@@ -246,7 +247,7 @@ section#skills, section#proyectos, section#experiencia { border-top: 1px solid v
 
 html[data-theme="dark"] .btn { color: var(--accent-ink); }
 
-.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(62, 92, 154, 0.35); }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(245, 184, 0, 0.5); }
 
 .btn.ghost {
   background: transparent;
