@@ -4,93 +4,176 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marcelo Cañete — Portafolio</title>
+<meta name="description" content="Portafolio de Marcelo Cañete, desarrollador junior en formación. Python, JavaScript, SQL y más.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+</script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
     <div class="logo">marcelo<span>.</span>cañete</div>
-    <nav class="site">
-      <a href="#stack">Stack</a>
-      <a href="#sobre">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="nav-row">
+      <nav class="site">
+        <a href="#inicio">Inicio</a>
+        <a href="#skills">Skills</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
 <section id="inicio">
   <div class="wrap hero">
-    <div>
+    <aside class="profile-card">
+      <div class="avatar">MC</div>
+      <h2 class="p-name">Marcelo Cañete</h2>
+      <p class="p-role">Desarrollador Junior en formación</p>
+      <ul class="facts">
+        <li><span>Formación</span> Análisis de Sistemas — UTIC</li>
+        <li><span>Ubicación</span> Asunción, Paraguay</li>
+        <li><span>Disponibilidad</span> Tiempo completo · Presencial</li>
+        <li><span>Modalidad</span> Puedo viajar / reubicarme</li>
+      </ul>
+      <div class="social">
+        <a href="https://github.com/marcelosamaniego" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/marcelo-samaniego-52a01840a" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:Marcelo.samaniego77@gmail.com">Email</a>
+        <a href="tel:+595984315658">Cel.</a>
+      </div>
+    </aside>
+
+    <div class="hero-main">
       <div class="kicker">Estudiante de Análisis de Sistemas · UTIC</div>
       <h1>Marcelo Cañete</h1>
       <p class="lead">Segundo año de la carrera, construyendo las bases para mi primer puesto como programador junior. Aprendo escribiendo código todos los días, no solo leyendo sobre él.</p>
-      <a class="btn" href="#contacto">Contactame</a>
-      <a class="btn ghost" href="#stack">Ver mi stack</a>
-    </div>
-    <div class="code-panel">
-      <div class="bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-      <div class="ln"><span class="kw">class</span> Marcelo:</div>
-      <div class="ln">&nbsp;&nbsp;carrera = <span class="str">"Análisis de Sistemas"</span></div>
-      <div class="ln">&nbsp;&nbsp;etapa = <span class="str">"segundo año"</span></div>
-      <div class="ln">&nbsp;&nbsp;stack = [<span class="str">"python"</span>, <span class="str">"javascript"</span>, <span class="str">"php"</span>,</div>
-      <div class="ln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"html"</span>, <span class="str">"css"</span>, <span class="str">"sql"</span>]</div>
-      <div class="ln">&nbsp;&nbsp;versionado = [<span class="str">"git"</span>, <span class="str">"github"</span>]</div>
-      <div class="ln">&nbsp;&nbsp;buscando = <span class="kw">True</span> <span class="cm"># primera oportunidad</span></div>
-      <div class="ln">&nbsp;</div>
-      <div class="ln">&gt;&gt;&gt; marcelo.disponibilidad()<span class="cursor"></span></div>
+      <div class="hero-actions">
+        <a class="btn" href="#contacto">Contactame</a>
+        <a class="btn ghost" href="#proyectos">Ver proyectos</a>
+      </div>
+      <div class="code-panel" aria-hidden="true">
+        <div class="bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+        <div class="ln"><span class="kw">class</span> Marcelo:</div>
+        <div class="ln">&nbsp;&nbsp;carrera = <span class="str">"Análisis de Sistemas"</span></div>
+        <div class="ln">&nbsp;&nbsp;etapa = <span class="str">"segundo año"</span></div>
+        <div class="ln">&nbsp;&nbsp;stack = [<span class="str">"python"</span>, <span class="str">"javascript"</span>, <span class="str">"php"</span>,</div>
+        <div class="ln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"html"</span>, <span class="str">"css"</span>, <span class="str">"sql"</span>]</div>
+        <div class="ln">&nbsp;&nbsp;versionado = [<span class="str">"git"</span>, <span class="str">"github"</span>]</div>
+        <div class="ln">&nbsp;&nbsp;buscando = <span class="kw">True</span> <span class="cm"># primera oportunidad</span></div>
+        <div class="ln">&nbsp;</div>
+        <div class="ln">&gt;&gt;&gt; marcelo.disponibilidad()<span class="cursor"></span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="stack">
+<section id="skills">
   <div class="wrap">
-    <h2 class="section-title">Mi stack</h2>
-    <p class="section-sub">Lo que ya manejo hoy, de base a herramientas de apoyo.</p>
-
-    <div class="stack-row">
-      <div class="label">Lenguajes</div>
-      <div class="items"><strong>Python</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>HTML</strong>, <strong>CSS</strong></div>
-    </div>
-    <div class="stack-row">
-      <div class="label">Bases de datos</div>
-      <div class="items">PostgreSQL, SQL — nivel básico/intermedio</div>
-    </div>
-    <div class="stack-row">
-      <div class="label">Control de versiones</div>
-      <div class="items"><strong>Git</strong>, <strong>GitHub</strong></div>
-    </div>
-    <div class="stack-row">
-      <div class="label">Redes y soporte</div>
-      <div class="items">Fundamentos de redes (curso Kolping), soporte técnico básico y resolución de incidencias</div>
-    </div>
-    <div class="stack-row">
-      <div class="label">Ofimática</div>
-      <div class="items">Excel, Word, PowerPoint — nivel intermedio</div>
-    </div>
-    <div class="stack-row">
-      <div class="label">Idiomas</div>
-      <div class="items">Español (nativo), inglés — nivel intermedio</div>
+    <h2 class="section-title">Habilidades</h2>
+    <p class="section-sub">Mi stack actual y nivel de confianza en cada herramienta.</p>
+    <div id="skill-bars" class="bars">
+      <div class="bar-item" data-level="85"><div class="bar-head"><span>HTML y CSS</span><span class="pct">85%</span></div><div class="track"><div class="fill"></div></div></div>
+      <div class="bar-item" data-level="75"><div class="bar-head"><span>Python</span><span class="pct">75%</span></div><div class="track"><div class="fill"></div></div></div>
+      <div class="bar-item" data-level="70"><div class="bar-head"><span>JavaScript</span><span class="pct">70%</span></div><div class="track"><div class="fill"></div></div></div>
+      <div class="bar-item" data-level="65"><div class="bar-head"><span>SQL · PostgreSQL</span><span class="pct">65%</span></div><div class="track"><div class="fill"></div></div></div>
+      <div class="bar-item" data-level="55"><div class="bar-head"><span>PHP</span><span class="pct">55%</span></div><div class="track"><div class="fill"></div></div></div>
+      <div class="bar-item" data-level="75"><div class="bar-head"><span>Git y GitHub</span><span class="pct">75%</span></div><div class="track"><div class="fill"></div></div></div>
     </div>
   </div>
 </section>
 
-<section id="sobre">
-  <div class="wrap about-grid">
-    <div>
-      <h2 class="section-title">Sobre mí</h2>
-      <p>Estoy en segundo año de Análisis de Sistemas en la UTIC y busco mi primera oportunidad como desarrollador junior. Antes de esto trabajé en análisis administrativo y comercial, manejando reportes, datos en Excel y procesos internos — ahí aprendí a resolver problemas con orden y atención al detalle.</p>
-      <p>Hoy estoy enfocado en reforzar programación y bases de datos, y en aportar esa misma disciplina a un equipo de desarrollo.</p>
+<section id="proyectos">
+  <div class="wrap">
+    <h2 class="section-title">Proyectos</h2>
+    <p class="section-sub">Trabajo práctico con GitHub: código, base de datos y despliegue real.</p>
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="card-top">
+          <span class="repo-primary">Control de inventario</span>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Flask</span>
+            <span class="chip">PostgreSQL</span>
+          </div>
+        </div>
+        <p>App web CRUD completa para gestionar stock de productos: alta, edición, eliminación y listado, con base de datos relacional.</p>
+        <div class="card-links">
+          <a href="https://github.com/marcelosamaniego/inventario-crud" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="card-top">
+          <span class="repo-primary">Portafolio personal</span>
+          <div class="chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+          </div>
+        </div>
+        <p>Este sitio: diseño responsive, modo oscuro, animaciones y despliegue automático en GitHub Pages.</p>
+        <div class="card-links">
+          <a href="https://marcelosamaniego.github.io/" target="_blank" rel="noopener">Ver sitio</a>
+          <a href="https://github.com/marcelosamaniego/marcelosamaniego.github.io" target="_blank" rel="noopener">Código</a>
+        </div>
+      </article>
     </div>
-    <div>
-      <div class="fact"><span>Carrera</span><span>Análisis de Sistemas — UTIC</span></div>
-      <div class="fact"><span>Año</span><span>Segundo año (actualmente)</span></div>
-      <div class="fact"><span>Buscando</span><span>Primer puesto junior</span></div>
-      <div class="fact"><span>Disponibilidad</span><span>Tiempo completo</span></div>
-      <div class="fact"><span>Ubicación</span><span>Asunción, Paraguay</span></div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <h2 class="section-title">Experiencia</h2>
+    <p class="section-sub">Recorrido laboral: desde gestión y supervisión hasta datos y soporte de TI.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-role">Soporte de TI</span><span class="tl-date">BCP · Actualidad</span></div>
+          <p>Soporte técnico a usuarios, resolución de incidencias, instalación y configuración de hardware y software, y atención de requerimientos con mesa de ayuda.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-role">Analista Comercial y de Compras</span><span class="tl-date">Ahorrazo · Fane · 3 años</span></div>
+          <p>Control de stock, planificación de reposición, análisis de datos en Excel, reportes gerenciales y carga de información en sistemas ERP.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-role">Jefe de Sala</span><span class="tl-date">Ahorrazo · 7 años</span></div>
+          <p>Liderazgo de equipos de piso, control de inventario, atención y venta al cliente, gestión de precios y exhibición de mercadería.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-role">Supervisor de Sucursal (Super I)</span><span class="tl-date">Indega · 2 años</span></div>
+          <p>Supervisión de la operación diaria, control de stock y caja, atención de reclamos y reportes a gerencia.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-role">Vendedor</span><span class="tl-date">Gaia SRL · 1 año</span></div>
+          <p>Atención y asesoramiento al cliente en punto de venta, reposición de productos y control de stock.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -98,7 +181,7 @@
 <footer class="site" id="contacto">
   <div class="wrap">
     <h2 class="section-title">Hablemos</h2>
-    <p class="section-sub">Disponible para entrevistas y para mi primera oportunidad como programador junior.</p>
+    <p class="section-sub">Disponible para entrevistas y mi primera oportunidad como programador junior, presencial en Asunción o reubicación.</p>
     <div class="contact-list">
       <a class="contact-item" href="mailto:Marcelo.samaniego77@gmail.com" id="email-item">
         <span class="k">Email</span> Marcelo.samaniego77@gmail.com
@@ -113,14 +196,14 @@
         <span class="k">GitHub</span> /marcelosamaniego
       </a>
     </div>
+    <p class="copy-note" id="copy-note"></p>
     <div class="foot-bottom">
-      <span> Marcelo Cañete — Asunción, Paraguay</span>
+      <span>Marcelo Cañete — Asunción, Paraguay</span>
       <span id="year"></span>
     </div>
   </div>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
